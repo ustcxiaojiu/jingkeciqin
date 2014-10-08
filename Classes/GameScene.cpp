@@ -1,20 +1,20 @@
-#include "JKCQ.h"
+#include "GameScene.h"
 #include "cocos2d.h"
 
 USING_NS_CC;
 
-Scene* JKCQ::createScene()
+Scene* GameScene::createScene()
 {
 	auto scene = Scene::create();
 
-	auto layer = JKCQ::create();
+	auto layer = GameScene::create();
 
 	scene->addChild(layer);
 	return scene;
 }
 
 
-bool JKCQ::init()
+bool GameScene::init()
 {
 	if (!Layer::init())
 	{

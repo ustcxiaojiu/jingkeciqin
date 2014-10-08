@@ -2,12 +2,12 @@
 
 #include "cocos2d.h"
 
-class JKCQ : public cocos2d::Layer 
+class GameScene : public cocos2d::Layer
 {
 public:
 	static cocos2d::Scene * createScene();
 	virtual bool init();
-	CREATE_FUNC(JKCQ);
+	CREATE_FUNC(GameScene);
 
 private:
 
