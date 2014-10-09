@@ -25,6 +25,7 @@ bool GameScene::init()
 	auto bg = Sprite::create("HelloWorld.png");
 	bg->setPosition(Point(winSize.width / 2, winSize.height / 2));
 	addChild(bg);
+	//TMXTiledMap *map = TMXTiledMap::create();
 return true;
 		
 
