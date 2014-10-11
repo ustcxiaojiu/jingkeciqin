@@ -18,6 +18,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     if(!glview) {
         glview = GLView::create("JKCQ");
         director->setOpenGLView(glview);
+		//glview->setFrameSize(480, 320);
     }
 
     // turn on display FPS

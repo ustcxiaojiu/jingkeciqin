@@ -1,6 +1,6 @@
 #include "SceneManager.h"
 #include "GameScene.h"
-#include "GameOverScene.h"
+//#include "GameOverScene.h"
 #include "GameStartScene.h"
 
 using namespace cocos2d;
@@ -28,9 +28,9 @@ void SceneManager::showScene(SceneType sceneType)
 	case GAME_SCENE:
 		pScene = GameScene::createScene();
 		break;
-	case GAME_OVER_SCENE:
-		pScene = GameOverScene::createScene();
-		break;
+	//case GAME_OVER_SCENE:
+	//	pScene = GameOverScene::createScene();
+	//	break;
 	}
 
 	if (pScene)
