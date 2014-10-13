@@ -2,7 +2,7 @@
 
 #include "cocos2d.h"
 
-class GameStartLayer:public cocos2d::LayerColor
+class GameStartLayer:public cocos2d::Layer
 {
 public:
 	virtual bool init();
