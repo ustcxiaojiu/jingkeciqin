@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "GameLayer.h"
+#include "OperationLayer.h"
 #include "cocos2d.h"
 
 USING_NS_CC;
@@ -7,10 +8,12 @@ USING_NS_CC;
 Scene* GameScene::createScene()
 {
 	auto scene = Scene::create();
+	auto gameLayer = GameLayer::create();
+	scene->addChild(gameLayer, 0);
 
-	auto layer = GameLayer::create();
-
-	scene->addChild(layer);
+	auto operateLayer = OperateLayer::create();
+	scene->addChild(operateLayer, 1);
+	operateLayer->setHero(gameLayer->getHero());
 	return scene;
 }
 

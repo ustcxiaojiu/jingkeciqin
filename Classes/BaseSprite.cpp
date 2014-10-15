@@ -3,6 +3,12 @@
 using namespace cocos2d;
 
 BaseSprite::BaseSprite() :
+m_pDownAction(NULL),
+m_pUpAction(NULL),
+m_pLeftAction(NULL),
+m_pRightAction(NULL),
+m_pMakeSureAction(NULL),
+
 m_pIdleAction(NULL),
 m_pWalkAction(NULL),
 m_pAttackAction(NULL),
@@ -14,17 +20,59 @@ m_currActionState(ACTION_STATE_NONE)
 }
 BaseSprite::~BaseSprite()
 {
+	CC_SAFE_RELEASE_NULL(m_pUpAction);
+	CC_SAFE_RELEASE_NULL(m_pDownAction);
+	CC_SAFE_RELEASE_NULL(m_pLeftAction);
+	CC_SAFE_RELEASE_NULL(m_pRightAction);
+	CC_SAFE_RELEASE_NULL(m_pMakeSureAction);
+
 	CC_SAFE_RELEASE_NULL(m_pIdleAction);
 	CC_SAFE_RELEASE_NULL(m_pWalkAction);
 	CC_SAFE_RELEASE_NULL(m_pAttackAction);
 	CC_SAFE_RELEASE_NULL(m_pHurtAction);
 	CC_SAFE_RELEASE_NULL(m_pDeadAction);
 }
+void BaseSprite::runUpAction()
+{
+	if (changeState(ACTION_STATE_UP))
+	{
+		this->runAction(m_pUpAction);
+	}
+}
+void BaseSprite::runDownAction()
+{
+	if (changeState(ACTION_STATE_DOWN))
+	{
+		this->runAction(m_pDownAction);
+	}
+
+}
+void BaseSprite::runLeftAction()
+{
+	if (changeState(ACTION_STATE_LEFT))
+	{
+		this->runAction(m_pLeftAction);
+	}
+}
+void BaseSprite::runRightAction()
+{
+	if (changeState(ACTION_STATE_RIGHT))
+	{
+		this->runAction(m_pRightAction);
+	}
+}
+void BaseSprite::runMakeSureAction()
+{
+	if (changeState(ACTION_STATE_MAKESURE))
+	{
+		this->runAction(m_pMakeSureAction);
+	}
+}
 
 void BaseSprite::runIdleAction()
 {
 	if (changeState(ACTION_STATE_IDLE))
-	{
+	{   
 		this->runAction(m_pIdleAction);
 	}
 }
